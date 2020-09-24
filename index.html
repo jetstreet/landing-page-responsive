@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Responsive Pepsi Website Landing Page</title>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <section class="sec">
             <header>
                 <a href="#"><img src="images/logo.png" class="logo" /></a>
-                <ul>
+                <div class="toggleMenu" onclick="menuToggle()"></div>
+                <ul class="navigation">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Products</a></li>
                     <li><a href="#">What's New</a></li>
@@ -68,11 +69,18 @@
         </section>
         <script type="text/javascript">
             function imgSlider(anything) {
-                document.querySelector('.pepsi').src = anything;
+                document.querySelector('.pepsi').src = anything
             }
             function changeBgColor(color) {
-                const sec = document.querySelector('.sec');
-                sec.style.background = color;
+                const sec = document.querySelector('.sec')
+                sec.style.background = color
+            }
+
+            function menuToggle() {
+                const toggleMenu = document.querySelector('.toggleMenu')
+                const navigation = document.querySelector('.navigation')
+                toggleMenu.classList.toggle('active')
+                navigation.classList.toggle('active')
             }
         </script>
     </body>
